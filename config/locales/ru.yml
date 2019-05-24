@@ -1,0 +1,11 @@
+ru:
+  activerecord:
+    models:
+      request: 'Заявка'
+      user: 'Пользователь'
+      note: 'Заметка'
+    attributes:
+      request:
+        name: 'Ваше имя'
+        phone: 'Контактный телефон'
+        text: 'Текст обращения'
