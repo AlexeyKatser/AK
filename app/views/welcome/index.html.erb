@@ -3,8 +3,7 @@
 
 
 <div class='container' id='request'>
-	<%= image_tag("chair-4.jpg", alt: "Кресло потерялось ruby!", class: 'background_image') %>
-	<div class='background-form'>
+	<div class='background-form background-image'>
 		<%= render partial: 'requests/form', locals: {new_request: Request.new} %>
 	</div>
 </div>
