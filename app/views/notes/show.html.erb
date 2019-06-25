@@ -1,0 +1,8 @@
+<div class='note'>
+	<% @notes.reverse_each do |note| %>
+		<%= note.topic %>
+		<%= note.desciption %>
+		<%= note.img_url %>
+		<%= note.text %>
+	<% end %>
+</div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'notes/show'
+  get 'notes/new'
   root "welcome#index"
   devise_for :users
   resources :users

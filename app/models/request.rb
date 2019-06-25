@@ -1,9 +1,8 @@
 class Request < ApplicationRecord
 
 validates :phone, :name, presence: true
-validates :phone, format: { with: /\+?\d{11,12}/ } 
-validates :name, length: { in: 2..30 }
-validates :phone, length: { in: 11..12}
+validates :phone, format: { with: /8\(\d{3}\) \d{3}-\d{2}-\d{2}/ } 
+validates :name, length: { in: 3..30 }
 
 
 before_save :before_save
