@@ -20,6 +20,9 @@ gem 'devise-i18n'
 
 gem 'bootsnap'
 
+gem 'carrierwave'
+gem 'rmagick'
+
 group :production do
 	gem 'pg'
 end
