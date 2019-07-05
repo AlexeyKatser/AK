@@ -1,8 +1,4 @@
-<div class='note'>
-	<% @notes.reverse_each do |note| %>
-		<%= note.topic %>
-		<%= note.desciption %>
-		<%= note.img_url %>
-		<%= note.text %>
-	<% end %>
+<div class='notes'>
+	<h3>Статья</h3>
+	<%= render partial: "form" %>	
 </div>

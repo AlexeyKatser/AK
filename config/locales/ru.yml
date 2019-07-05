@@ -3,9 +3,16 @@ ru:
     models:
       request: 'Заявка'
       user: 'Пользователь'
-      note: 'Заметка'
+      note: 'Статья'
     attributes:
       request:
         name: 'Ваше имя'
         phone: 'Контактный телефон'
         text: 'Комментарий'
+        email: 'E-mail адрес'
+  controllers:
+    notes:
+      updated: 'Статья обновлена'
+      created: 'Статья создана!'
+    requests:
+      created: 'Заявка успешно подана'

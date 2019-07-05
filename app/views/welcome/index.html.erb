@@ -1,12 +1,20 @@
 
-<div class='row'>
-	
+<div class="overlay_popup"></div>
+<div class ='popup container' id='popup1'>
+	<%= render partial: 'requests/form', locals: {new_request: Request.new, mode: 2 } %>
+</div>
+
+<div class='notes container row' id='notes'>
+	<h3>Список статей</h3>
+	<%= render partial: "notes/note", collection: Note.last(3) %>	
 </div>
 
 <div class='row'>
 	<div class='container' id='request'>
 		<div class='background-form background-image'>
-			<%= render partial: 'requests/form', locals: {new_request: Request.new} %>
+			<%= render partial: 'requests/form', locals: {new_request: Request.new, mode: 1 } %>
 		</div>
 	</div>
 </div>
+
+

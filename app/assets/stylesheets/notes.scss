@@ -1,3 +1,91 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.note-background {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(3px);
+  -webkit-filter: blur(3px);  
+
+}
+
+
+.note-topic {
+	/*margin-top: 20px;*/
+
+	font-weight: bold;
+	margin: 0px;
+	padding: 0 !important;
+
+
+	z-index: -1;
+	width: 100%;
+	padding: 10px;
+	text-align: center;	
+	margin-top: 20px;
+	max-height: 100px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+}
+
+.note-image
+{
+	max-height: 100px;
+	float: left;
+	max-width: 80px;
+}
+
+
+.note-box{
+	/*background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
+	border-radius: 10px;	
+	margin: 20px;
+	min-height: 200px;
+	max-height: 200px;
+	border-color: grey;
+	border-style: solid;
+	border-width: 1px;
+	padding: 0px 20px 0px 20;
+	color: black;
+
+	a:visited, a:hover
+	{
+		color: black !important;
+	}
+	a {
+		color: black !important;
+	}
+}
+
+.note-box:hover {
+	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.note-text {
+	text-indent: 1.5em;
+	display: inline-block;
+	margin-top: 10px;
+	text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+
+.note {
+	 min-width: 100px;	
+}

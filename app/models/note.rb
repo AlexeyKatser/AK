@@ -1,3 +1,6 @@
 class Note < ApplicationRecord
-	mount_apploader :img_url, NoteImgUploader 
+	
+	validates :topic, presence: true
+
+	mount_uploader :img_url, NoteImgUploader 
 end
