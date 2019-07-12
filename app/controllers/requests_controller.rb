@@ -1,4 +1,7 @@
 class RequestsController < ApplicationController
+
+  before_action :checkUserAdmin, except: [:new, :create]
+
   def show
   	@requests = Request.all
   end
@@ -10,14 +13,20 @@ class RequestsController < ApplicationController
       @new_request = Request.new
   end
 
+  def index
+    @requests = Request.all
+    render action: 'show'
+  end
+
   def create
   	@new_request = Request.new(request_params)
     @new_request.preferedTime = date_from_params(params, :preferedTime)
     respond_to do |format|
       if @new_request.save
-        format.html { flash.notice = I18n.t('controllers.requests.created')
+        format.js { render layout: false, content_type: 'text/javascript' }
+        format.html { flash.notice = I18n.t('controllers.requests.created') 
           redirect_to root_url }
-        format.js { puts 'js request' }
+        format.json { puts 'json request' }
       else
   		  format.html { render action: 'new' }
         format.js

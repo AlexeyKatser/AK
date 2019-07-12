@@ -1,0 +1,7 @@
+
+<h1><b><%= service.name %> </h1></b>
+<%= image_tag(service.icon.url, size: '100', alt: 'Фото статьи', class: 'back-image') if service.icon? %>
+<%= service.price %>
+<%= service.description %>
+<%= service.durationinminutes %> мин.
+<%= service.amountofvisits %> встреч

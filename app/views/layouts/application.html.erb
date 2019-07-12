@@ -26,12 +26,23 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
 
         </button>
-        <a class="navbar-brand" href="#">Mpg</a>
+        <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
             <li><%= link_to "Записаться на приём", "#request"  %></li>
             <li><%= link_to "Заказать звонок", '#', class: 'recall', rel: 'popup1' %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
+          </ul>
+          <ul class = "nav navbar-nav navbar-right">
+            <li class>
+                      <% if user_signed_in? %>
+              <li><%= link_to current_user.name, current_user %></li>
+              <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Войти', new_user_session_path %></li>
+              <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+            <% end %>
+            </li>
           </ul>
         </div>
       </div>

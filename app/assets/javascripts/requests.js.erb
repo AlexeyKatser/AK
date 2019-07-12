@@ -2,7 +2,10 @@ $(document).ready(function()
 {
   	//console.log('requests.js.erb');
   //Использование параметра completed
-	$('#request_phone').each(function() { $(this).mask("8(999) 999-99-99"); });
+	$('.phone').each(function() { 
+		$(this).mask("8(999) 999-99-99"); 
+	});
+
 
 	//console.log('ready!')
 	$('#request_name, #request_phone').blur( function()
@@ -12,7 +15,7 @@ $(document).ready(function()
 
 
 
-	$("#submit-request").click(function(event){ 
+	$("#submit-request, #submit-request-fast").click(function(event){ 
 		//console.log('clicked!');
 		if (checkCorrect($('#request_name')) && checkCorrect($('#request_phone')))
 			console.log('sumbiting');
@@ -21,7 +24,7 @@ $(document).ready(function()
 	 });
 
 	$("#submit-request-fast").click(function(event){ 
-		event.preventDefault();
+		//event.preventDefault();
 	});
  });
 

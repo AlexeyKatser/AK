@@ -1,23 +1,25 @@
-<%= form_for new_request do |f| %>
-	<%= render partial: 'partials/form_errors', locals: {model: new_request} %>
-	<div class="lead text-center"><%= mode == 1 ? 'Записаться на консультацию' : 'Заказать звонок' %></div>
-  <div class="form-group">   
-   	 	<%= f.text_field :name, class: 'form-control', placeholder: true, required: true %>
+
+  <% mode = 1 if mode == nil %>
+  <%= form_for new_request, class: 'form-inline', remote: mode == 2 ? true : false  do |f| %>
+  	<%= render partial: 'partials/form_errors', locals: {model: new_request} %>
+  	<div class="lead text-center"><%= mode == 1 ? 'Записаться на консультацию' : 'Заказать звонок' %></div>
+    <div class="form-group">   
+     	 	<%= f.text_field :name, class: 'form-control', placeholder: true, required: true %>
+        <div class="error-box"></div>
+    </div>
+  	<div class="form-group">
+     	 	<%= f.telephone_field :phone, class: 'form-control phone', placeholder: true %>
+        <div class="error-box"></div>
+    </div>
+    <div class='form-group', style="display:<%= mode == 1? 'all' : 'none' %>" >Дата и время:
+      <%= f.datetime_select :preferedTime, class: 'form-control', placeholder: true %>
       <div class="error-box"></div>
-  </div>
-	<div class="form-group">
-   	 	<%= f.telephone_field :phone, class: 'form-control', placeholder: true %>
-      <div class="error-box"></div>
-  </div>
-  <div class='form-group', style="display:<%= mode == 1? 'all' : 'none' %>" >Дата и время:
-    <%= f.datetime_select :preferedTime, class: 'form-control', placeholder: true %>
-    <div class="error-box"></div>
-  </div>
-	<div class="form-group">
-   	 	<%= f.text_area :text, size: "60x2", class: 'form-control', placeholder: true %>
-      <div class="error-box"></div>
-  </div>
-  <div class="actions" align='center'>
-    <%= f.submit mode == 1 ? 'Записаться' : 'Перезовнить мне' , id: mode == 1 ? 'submit-request' : 'submit-request-fast', class: 'btn btn-primary', remote: mode == 1 ? false : true %>
-  </div>
-<% end %>
+    </div>
+  	<div class="form-group">
+     	 	<%= f.text_area :text, size: "60x2", class: 'form-control', placeholder: true %>
+        <div class="error-box"></div>
+    </div>
+    <div class="actions" align='center'>
+      <%= f.submit mode == 1 ? 'Записаться' : 'Перезовнить мне' , id: mode == 1 ? 'submit-request' : 'submit-request-fast', class: 'btn btn-primary' %>
+    </div>
+  <% end %>

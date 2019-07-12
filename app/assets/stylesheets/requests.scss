@@ -1,34 +1,70 @@
 // Place all the styles related to the requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.background-image{
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.background-image {
   background-color: white;
-  height: 400;
-  width: 420;
   background-size: cover;
   background-image: url('chair-4.jpg');
   padding: 20px 20px;
   border-radius: 10px;
 }
 
-.container{
-	position: relative;
-}
-
 .background-form {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
   font-size: 18px;
   opacity: 0.8;
-  max-width: 420px;
+  width: 80% !important;
+  text-align: center;
+  display: flex;
+
 }
 
 .error-box{
     color: red;
     font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .background-image {
+    left: 30px;
+    transform: translate(0, 0);
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+.overlay_popup {
+  display: none;
+  position:fixed;
+  z-index: 999;
+  top:0;
+  right:0; 
+  left:0;
+  bottom:0;
+  background:#000; 
+  opacity:0.7;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999999;
+  margin: 0 auto !important;
+  max-width: 400px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 20px;
+  top: 35%;
+  left: 35%;
+  background-color: white;
+}
+
+@media (max-width: 600px) {
+  .popup {
+    left: 20px;
+    width: 100%
+  }
 }
