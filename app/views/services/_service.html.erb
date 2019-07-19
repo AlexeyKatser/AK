@@ -1,7 +1,17 @@
-
-<h1><b><%= service.name %> </h1></b>
-<%= image_tag(service.icon.url, size: '100', alt: 'Фото статьи', class: 'back-image') if service.icon? %>
-<%= service.price %>
-<%= service.description %>
-<%= service.durationinminutes %> мин.
-<%= service.amountofvisits %> встреч
+<div class="service-border">
+	<div class="service-title text-center"><%= service.name %></div>
+	<div class='s-wrap'>
+		<div class='service-wrap'>
+			<%= image_tag(service.icon.url, alt: 'Фото статьи', class: 'back-image') if service.icon? %>		
+		</div>		
+		<div class='loop-action'>
+			<a href="#request" class="loop-button">Записаться</a>
+		</div>
+	</div>
+	<div class='service-info'>
+		<i class="far fa-clock fa-lg"> </i><div class='service-text'> <%= service.durationinminutes %> мин. </div>
+		<br><i class="fas fa-handshake fa-lg"> </i><div class='service-text'><%= service.amountofvisits %> встреч </div>
+		<br><%= service.description %>	
+		<div class="price text-center">&#8381; <%= service.price %></div>
+	</div>
+</div>

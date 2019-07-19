@@ -2,8 +2,122 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.back-image {
-	max-height: 100px;
-	float: left;
-	max-width: 80px;	
+* {box-sizing: border-box;}
+.service-border {
+  margin: 20px -0.25px 0 0;
+  background: white;
+  padding: 20px;
+  border: 1px solid #F1E7E8;
+  border-radius: 5px;
+  z-index: -1;
+  display: inline-block;
+}
+.s-wrap {
+  height: 100%;
+  position: relative;
+ }
+.service-wrap {
+	position: relative;
+}
+.service-wrap:after {
+  content: '';
+  background: rgba(73, 102, 162, .5);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  transform: scale(.3);
+  transition: .3s ease-in-out;
+}
+.service-border:hover .service-wrap:after {
+  opacity: 1;
+  transform: scale(1);
+}
+.service-wrap a {
+  display: block;
+  text-decoration: none;
+}
+.service-wrap img {
+  display: block;
+  background-size: cover;
+  width: 100%;
+}
+.loop-action {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: .3s ease-in-out;
+}
+.service-border:hover .loop-action {
+	opacity: 1;
+}
+.loop-action a {
+  text-decoration: none;
+  display: block;
+  border: 1px solid white;
+  padding: .5em 1em;
+  font-size: 14px;
+  line-height: 1.6;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  min-width: 160px;
+  margin: 5px auto;
+  transition: .3s ease-in-out;
+  background-color: #428bca !important;
+  border-radius: 5px;
+}
+.loop-action a:after {
+  content: '';
+  position: absolute;
+  left: -220%;
+  top: -500%;
+  width: 140%;
+  height: 1000%;
+  transform: rotate(45deg);
+  background: white;
+  z-index: -1;
+  transition: .3s ease-in-out;
+}
+
+.loop-action a:hover:after {left: 0%;}
+.service-border:hover {border-color: #4966A2;}
+.stars {
+  font-size: 14px;
+  font-family: FontAwesome;
+}
+.service-title {
+  font-weight: bold;
+  color: #162546;
+  font-size: 20px;
+  margin-bottom: 20px;
+  height: 55px;
+  vertical-align: middle;
+  line-height: 30px;
+}
+.price {
+  color: #162546;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.service-info {
+	padding-top: 15px;
+	line-height: 30px;
+}
+.service-text {
+	display: inline;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 767px) {
+	.loop-action {
+		opacity: 1;
+	}
 }

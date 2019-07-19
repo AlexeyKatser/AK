@@ -2,3 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.content
+{
+	padding-top: 30px !important;
+}
+
+.carousel-img {
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	max-height: 600px;
+}
+
+.carousel {
+	max-height: 600px;
+}

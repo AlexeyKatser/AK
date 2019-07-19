@@ -8,7 +8,7 @@ $(document).ready(function()
 	    $('.overlay_popup').show(); // Открываем блок заднего фона
 	    event.preventDefault();
 	}) 
-	$('.overlay_popup').click(function() { // Обрабатываем клик по заднему фону
+	$('.overlay_popup, .boxclose').click(function() { // Обрабатываем клик по заднему фону
 	    $('.overlay_popup, .popup').hide(); // Скрываем затемнённый задний фон и основное всплывающее окно
 	});
 });	

@@ -5,7 +5,7 @@
   background-color: white;
   background-size: cover;
   background-image: url('chair-4.jpg');
-  padding: 20px 20px;
+  padding: 0 20px 10px;
   border-radius: 10px;
 }
 
@@ -15,24 +15,14 @@
   left: 50%;
   font-size: 18px;
   opacity: 0.8;
-  width: 80% !important;
   text-align: center;
   display: flex;
-
+  padding-top: 20px;
 }
 
 .error-box{
     color: red;
     font-size: 12px;
-}
-
-@media (max-width: 700px) {
-  .background-image {
-    left: 30px;
-    transform: translate(0, 0);
-    width: 100%;
-    max-width: 90%;
-  }
 }
 
 .overlay_popup {
@@ -62,9 +52,42 @@
   background-color: white;
 }
 
-@media (max-width: 600px) {
+.request-header {
+  margin-top: 20px;
+}
+
+a.boxclose {
+    float:right;
+    margin-top:-36px;
+    margin-right:-31px;
+    cursor:pointer;
+    color: #fff;
+    border: 1px solid #AEAEAE;
+    border-radius: 40px;
+    background: black;
+    font-size: 19px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px;       
+    text-decoration: none;
+}
+
+.boxclose:before {
+    content: "×";
+}
+
+.boxclose:active .overlay_popup {
+
+}
+
+
+@media screen and (max-width: 800px) {
   .popup {
-    left: 20px;
-    width: 100%
+    width: 100%;
+    left: 10%;
+  }
+  .background-image {
+    margin: 0 20px !important;
   }
 }

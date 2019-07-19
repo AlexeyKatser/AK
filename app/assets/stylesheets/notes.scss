@@ -30,14 +30,15 @@
 	width: 100%;
 	padding: 10px;
 	text-align: center;	
-	margin-top: 20px;
-	max-height: 100px;
+	max-height: 80px;
 
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 5;
+    vertical-align: center;
+    height: 80px;
 }
 
 .note-image
@@ -51,14 +52,11 @@
 .note-box{
 	/*background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
 	border-radius: 10px;	
-	margin: 20px;
 	min-height: 200px;
-	max-height: 200px;
 	border-color: grey;
 	border-style: solid;
 	border-width: 1px;
-	padding: 0px 20px 0px 20;
-	color: black;
+	padding: 20px;
 
 	a:visited, a:hover
 	{
@@ -69,10 +67,13 @@
 	}
 }
 
-.note-box:hover {
+.note-box:hover  {
 	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+	 color: black;
 }
-
+a:hover {
+	color: black;
+}
 
 .note-text {
 	text-indent: 1.5em;
