@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  datestart: 2019-07-22
+  dateend: 2019-07-22
+  description: MyString
+  image: MyString
+  price: MyString
+
+two:
+  name: MyString
+  datestart: 2019-07-22
+  dateend: 2019-07-22
+  description: MyString
+  image: MyString
+  price: MyString
