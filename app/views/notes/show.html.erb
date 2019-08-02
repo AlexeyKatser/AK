@@ -1,4 +1,20 @@
-<div class='notes'>
-	<h3>Статья</h3>
-	<%= render partial: "form" %>	
+<div class="container">
+	<div class="note__cont">
+		<h1 class='note__index_topic'>
+			<%= @note.topic %>	
+		</h1>
+		<div class="">
+			<%= image_tag image_url(@note.img_url), class: 'note__image' %>
+		</div>
+			
+		<div class="note__descr">
+			<%= @note.description %>
+		</div>
+		<div class="note__text">
+			<%= @note.text %>
+		</div>
+	</div>
+	<% if checkUserAdmin %>
+		<br><%= link_to 'Редактировать статью', edit_note_path(@note) %>
+	<% end %>
 </div>

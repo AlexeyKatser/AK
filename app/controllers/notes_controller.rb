@@ -3,7 +3,6 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :update, :edit, :destroy] 
 
   def show
-    puts 'show'
   end
 
   def new
@@ -11,12 +10,14 @@ class NotesController < ApplicationController
   end
 
   def index
-    puts 'index'
   	@notes = Note.all
   end
 
   def destroy
     @note.destroy
+  end
+
+  def edit
   end
 
   def create  

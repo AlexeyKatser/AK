@@ -76,3 +76,12 @@ body {
 {
 	padding-top: 60px !important;
 }
+
+.mt-20
+{
+	margin-top: 20px;
+}
+
+footer {
+	bottom: 0;
+}

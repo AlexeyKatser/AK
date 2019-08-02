@@ -90,3 +90,45 @@ a:hover {
 .note {
 	 min-width: 100px;	
 }
+
+.note__image {
+	background-size: cover;
+	margin: 30px auto;
+	max-height: 300px;
+	display: block;
+}
+
+.note__index_topic {
+	text-align: center;
+	font-weight: bold;
+	display: inline-block;
+	font-size: 24px;
+	line-height: 30px;
+	margin: 0 20px;
+}
+
+.note__cont {
+	border-color: white;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	padding: 20px;
+	width: 80%;
+	display: block;
+	margin: auto;
+}
+
+.note__descr {
+	font-weight: lighter;
+}
+
+.note__text {
+	
+}
+
+@media only screen and (max-width: 1650px) and (min-width: 1024px) 
+{
+	.note__index_topic {
+		width: 840px;
+	}	
+}
