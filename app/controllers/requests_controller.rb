@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
 
-  before_action :checkUserAdmin, except: [:new, :create]
+  before_action :checkUserAdminWithRedirect, only: [:new, :create, :edit, :update, :index]
+  before_action :set_request, only: [:edit, :show, :update, :destroy]
 
   def show
   	@requests = Request.all
@@ -41,6 +42,10 @@ class RequestsController < ApplicationController
   private
   def request_params
   	params.require(:request).permit(:name, :phone, :text, :preferedTime, :setTime, :rtype, :status)	
+  end
+
+  def set_request
+    @request = Request.find(params[:id])
   end
 
 end 

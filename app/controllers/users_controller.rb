@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :admin]
+  before_action :checkUserAdminWithRedirect, only: [:edit, :update, :destroy]
 
   # GET /users
   def index

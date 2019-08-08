@@ -1,5 +1,6 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :checkUserAdminWithRedirect, only: [:edit, :update, :destroy]
 
   # GET /services
   def index

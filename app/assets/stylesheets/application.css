@@ -82,6 +82,29 @@ body {
 	margin-top: 20px;
 }
 
+.mt-auto
+{
+	margin: auto !important;
+}
+
 footer {
 	bottom: 0;
 }
+
+.footer__main_address {
+}
+
+.footer__main_block {
+	border-width: 1px;
+	border-color: gray;
+	border-top-style: : solid;	
+}
+
+.footer__main_address_text {
+	text-align: center;
+}
+
+.footer__map_container {
+	width: 100%;
+}
+

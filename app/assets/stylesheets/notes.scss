@@ -49,15 +49,15 @@
 }
 
 
-.note-box{
+.note-box {
 	/*background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
 	border-radius: 10px;	
-	min-height: 200px;
+	height: 200px;
 	border-color: grey;
 	border-style: solid;
 	border-width: 1px;
 	padding: 20px;
-
+	margin-top: 20px;
 	a:visited, a:hover
 	{
 		color: black !important;
@@ -118,6 +118,13 @@ a:hover {
 	margin: auto;
 }
 
+.note__date {
+	color: #e5e5e5;
+	right: 20px;
+	bottom: 3px;
+	position: absolute;
+}
+
 .note__descr {
 	font-weight: lighter;
 }
@@ -131,4 +138,11 @@ a:hover {
 	.note__index_topic {
 		width: 840px;
 	}	
+}
+
+@media screen and (max-width: 800px)  {
+	.note-box {
+
+	}
+	
 }

@@ -1,13 +1,16 @@
 <div class='col-lg-4 col-md-4 col-sm-4 col-6'>
 	<%= link_to note_path(note), action: 'edit' do %>
-	<div class="note-box">
-	    <%# tag.img src: (note.img_url? ? "#{asset_path(note.img_url)}" : image_url("default.png")), class: 'note-image' %>
-	    <div class='note-topic'>
-		    <h3><%= note.topic %></h3>
+		<div class="note-box">
+		    <%# tag.img src: (note.img_url? ? "#{asset_path(note.img_url)}" : image_url("default.png")), class: 'note-image' %>
+		    <div class='note-topic'>
+			    <h3><%= note.topic %></h3>
+			</div>
+			<div class='note-text'>
+				    <%= note.description %>
+			</div>
+			<div class="note__date">
+				<%= note.updated_at.strftime('%Y-%m-%d') %>
+			</div>
 		</div>
-		<div class='note-text'>
-			    <%= note.description %>
-		</div>
-	</div>
 	<% end %>
 </div>

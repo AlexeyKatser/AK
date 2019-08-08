@@ -6,5 +6,12 @@ class ApplicationController < ActionController::Base
 	Date.civil(*date_array)
 	end
 
+	def checkUserAdmin
+		user_signed_in? ? current_user.admin? : false		
+	end
 
+
+	def checkUserAdminWithRedirect
+		redirect_to root_path unless checkUserAdmin 
+	end
 end

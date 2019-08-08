@@ -5,7 +5,7 @@
 			<%= image_tag(service.icon.url, alt: 'Фото статьи', class: 'back-image') if service.icon? %>		
 		</div>		
 		<div class='loop-action'>
-			<a href="#request" class="loop-button">Записаться</a>
+			<a href="#request" class="loop-button scrollto">Записаться</a>
 		</div>
 	</div>
 	<div class='service-info'>
@@ -13,5 +13,8 @@
 		<br><i class="fas fa-handshake fa-lg"> </i><div class='service-text'><%= service.amountofvisits %> встреч </div>
 		<br><%= service.description %>	
 		<div class="price text-center">&#8381; <%= service.price %></div>
+		<% if checkUserAdmin %>
+			<br><%= link_to 'Редактировать услугу', edit_service_path(service) %>
+		<% end %>
 	</div>
 </div>

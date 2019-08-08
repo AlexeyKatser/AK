@@ -1,0 +1,17 @@
+$(document).ready(function()
+{
+	var textarea = $('textarea');
+
+	textarea.on('change keyup paste input click', function(){
+		incHeight(this);
+	});
+
+});
+
+var incHeight = function(elem) {
+	var height = parseInt(elem.style.height, 10);
+  	if ((elem.scrollHeight > height) || isNaN(height))
+  	{
+    	elem.style.height = elem.scrollHeight + 5 + "px";
+  	}
+}
