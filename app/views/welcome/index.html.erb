@@ -6,10 +6,10 @@
 		    <li data-target="#carousel" data-slide-to="2"></li>
 		  </ol>
 	 	<div class="carousel-inner" role="listbox">
-	 		<div class="item">
+	 		<div class="item active">
 	      		<img src="6971684074_6a9d451201_k.jpg" alt="First slide" class='carousel-img'>
 	    	</div>
-	    	<div class="item active">
+	    	<div class="item">
 	    		<img src="2.png" alt="Second slide" class='carousel-img'>
 	      		<div class="carousel-caption">
         			Second slide caption
@@ -19,31 +19,35 @@
 	      		<img src="3.png" alt="Third slide" class='carousel-img'>
 	    	</div>
 	  	</div>
-	    <a href="#carousel" class="left carousel-control" role="button" data-slide="prev">
+	    <!--<a href="#carousel" class="left carousel-control" role="button" data-slide="prev">
 	    	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 	    </a>
 	    <a href="#carousel" class="right carousel-control" role="button" data-slide="next">
 	    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    </a>
+	    </a>-->
 	</div>
 </div>
 
 <div class='container mt-20' id='notes'>
-	<div class='row'>
-		<h3 style="text-align: center;">Список статей</h3>
-		
-			<%= render partial: "notes/note", collection: Note.last(3) %>	
+	<div class="global__box">
+		<div class='row'>
+			<div class="global__box_title">Статьи</div>
+			
+				<%= render partial: "notes/note", collection: Note.last(3) %>	
 		</div>
 	</div>
 </div>
 
 <div class='container mt-20' id='services'>
-	<div class='row'>
-		<% Service.last(3).each do |serv| %>
-			<div class="col-md-4 col-sm-5 col-12" >
-				<%= render partial: 'services/service', locals: {service: serv } %>
-			</div>
-		<% end %>
+	<div class="global__box">
+		<div class='row'>
+			<div class="global__box_title">Услуги</div>
+			<% Service.last(3).each do |serv| %>
+				<div class="col-md-4 col-sm-5 col-12" >
+					<%= render partial: 'services/service', locals: {service: serv } %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>
 
