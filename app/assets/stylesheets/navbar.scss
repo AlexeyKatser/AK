@@ -1,0 +1,33 @@
+.navbar__main {
+	border-bottom: 2px solid $top_border_color;
+}
+
+.navbar__main_brand_font {
+	font-size: 48px;
+	font-family: 'Corinthia', arial;
+	line-height: 50px;
+}
+
+.navbar__main_brand_name {
+  color:  $top_border_color;
+  display: inline-block;
+}
+
+.navbar__main_brand_sirname {
+  //color: white;
+  background-color:  $top_border_color;
+  display: inline-block;
+}
+
+@media screen and (max-width: 992px) 
+{
+	.navbar__main {
+		padding: 0rem 1rem !important;
+	}
+
+}
+
+.navbar__main_btn_separator {
+	border-right: 1px solid $top_border_color;
+	border-left: 1px solid $top_border_color;
+}

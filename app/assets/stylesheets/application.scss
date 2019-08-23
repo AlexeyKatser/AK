@@ -1,0 +1,32 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+*/
+
+//@import 'reset';
+@import 'global';
+@import "bootstrap";
+@import 'mdb';
+@import 'carousel';
+@import 'events';
+@import 'footer';
+@import 'notes';
+@import 'requests';
+//@import 'scaffolds';
+@import 'services';
+@import 'users';
+@import 'welcome';
+@import 'navbar';
+@import 'admin';
+
+body {
+	font-family: Verdana;
+}
+
+.content
+{
+	padding-top: 70px !important;
+	//background-color: #f9f9f9;
+	padding-bottom: 20px;
+}

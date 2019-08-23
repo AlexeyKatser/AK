@@ -6,66 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "Mpg" %></title>
     <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <%#= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-
-    <%= javascript_include_tag "application" %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
     <script src="https://kit.fontawesome.com/79552ccb93.js"></script>
+    <link href="http://allfont.ru/allfont.css?fonts=corinthia" rel="stylesheet" type="text/css" />
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js" type="text/javascript"></script>
     <![endif]-->
   </head>
-  <body>
+<body class='grey lighten-3'>
 
-
-<div class="navbar navbar-default  navbar-main" id='navbar'>
-  <div class="container">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-
-    </button>
-    <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
-    <div class="navbar-collapse collapse navbar-responsive-collapse">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Записаться на приём", "#request", class: 'scrollto'    %></li>
-        <li><%= link_to "Заказать звонок", '#', class: 'recall', rel: 'popup1' %></li>
-        <li><%= link_to "Link3", "/path3"  %></li>
-      </ul>
-      <ul class = "nav navbar-nav navbar-right hidden">
-        <li >
-                  <% if user_signed_in? %>
-          <li><%= link_to current_user.name, current_user %></li>
-          <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
-        <% else %>
-          <li><%= link_to 'Войти', new_user_session_path %></li>
-          <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+<header>
+  
+    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light fixed-top navbar__main" id='navbar'>
+      <div class="container">
+        <%= link_to root_path, class: 'navbar-brand navbar-header py-0' do %>
+          <!--<img src=<%= asset_path("logo3.png") %> alt='Алина Кацер' class='d-inline-block'>       -->
+          <div class="navbar__main_brand_name navbar__main_brand_font">
+            Имя&nbsp 
+          </div>
+          <div class="navbar__main_brand_sirname navbar__main_brand_font">
+            &nbspФамлия&nbsp
+          </div>
         <% end %>
-        </li>
-      </ul>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navi" aria-controls="navi" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        <div class="navbar-collapse collapse" id='navi'>
+          <ul class="navbar-nav mr-auto">
 
-      <ul class='nav navbar-nav navbar-right'>
-        <li class="nav-item"><a href="tel:+1234567890"><i class="fas fa-phone-volume fa-lg"></i> +1234567890 </a></li>
-      </ul>
+            <li class='nav-item'>
+              <%= link_to "Записаться на приём", "#request", class: 'scrollto nav-link navbar__main_btn_separator' %>
+            </li> 
+            <div class="dropdown-divider"></div>
+            <li class='nav-item'>
+              <%= link_to "Заказать звонок", '#', class: 'recall nav-link navbar__main_btn_separator', rel: 'popup1' %>         
+            </li class='nav-item'>
+            <li>
+              <%= link_to "Link3", "/path3", class: 'nav-link navbar__main_btn_separator' %>
+            </li>
+          </ul>
+          <ul class="navbar-nav navbar-right" style="display: none;">
+            <li >
+                      <% if user_signed_in? %>
+              <li><%= link_to current_user.name, current_user %></li>
+              <li><%= link_to 'Выйти', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+              <li><%= link_to 'Войти', new_user_session_path %></li>
+              <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+            <% end %>
+            </li>
+          </ul>
+
+          <ul class='navbar-nav navbar-right'>
+            <li class="nav-item">
+              <a href="tel:+1234567890"><i class="fas fa-phone-volume fa-lg"></i> +1234567890 </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class='content'>
+</header><!-- /header --> 
+
+
+  <div class="overlay_popup"></div>
+  <div class="justify-content-center d-flex">
+    <div class ='popup container col-md-4' id='popup1'>
+      <%= render partial: 'requests/form', locals: { new_request: Request.new, mode: 2 } %>
     </div>
   </div>
-</div>
-<div class='content'>
- 
-  <div class="overlay_popup"></div>
-  <div class ='popup container col-md-4' id='popup1'>
-    <%= render partial: 'requests/form', locals: { new_request: Request.new, mode: 2 } %>
-  </div>
 
-            <%= bootstrap_flash %>
-            <%= yield %>
-</div>
+  <%= yield %>
+
 <footer class="footer__main_block navbar-flow-bottom">
-  <div class="row">
-    <div class="container mt-20">
-      <div class="col-md-2 col-xl-2 col-xs-1 col-sm-1"></div>
+  <div class="container my-2">
+    <div class="row justify-content-center">
       <div class="footer__main_address col-md-5 col-xs-10 col-sm-7">
         <div class='footer__map_container'>          
           <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afecf8c4a31c1009ab204a082773660372592772133b6109636bd5a4b3a4ab1f0&amp;source=constructor" width="100%" height="240" frameborder="0"></iframe>
@@ -74,7 +94,7 @@
       <div class="col-md-3 col-xs-12 col-sm-3 mt-20">
         <div class="footer__main_address_text">
           Контакты:
-          <br><br><br>
+          <br><br>
           <a href="tel:+1234567890"><i class="fas fa-phone fa-lg"> +1234567890</i></a>
           <br>
           <br>Кабинет, м. Чернышевская

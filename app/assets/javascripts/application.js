@@ -10,40 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
-//= require activestorage
+//= require popper.min
 //= require jquery3
-//= require jquery_ujs
 //= require bootstrap
-//= require twitter/bootstrap
-//= require_tree 
+//= require mdb
+//= require rails-ujs
+//= require_tree .
 
-$(document).ready(function()
-{
-
-	$("a.scrollto").click(function () {
-	elementClick = jQuery(this).attr("href")
-	destination = jQuery(elementClick).offset().top - 60;
-	jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 500);
-	return false;
-	});
-
-	$.fn.scrollEnd = function(callback, timeout) {          
-	  $(this).scroll(function(){
-	    var $this = $(this);
-	    if ($this.data('scrollTimeout')) {
-	      clearTimeout($this.data('scrollTimeout'));
-	    }
-	    $this.data('scrollTimeout', setTimeout(callback,timeout));
-	  });
-	};
-
-	$(window).scroll(function(){
-	    $('#navbar').fadeOut();
-	});
-
-	$(window).scrollEnd(function(){
-	    $('#navbar').fadeIn();
-	}, 500);
-
-});

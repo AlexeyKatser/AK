@@ -1,8 +1,6 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-@import 'global';
 .note-background {
   position: absolute;
   width: 100%;
@@ -22,25 +20,16 @@
 
 
 .note-topic {
-	/*margin-top: 20px;*/
-
-	font-weight: bold;
 	margin: 0px;
-	padding: 0 !important;
 
-
-	z-index: -1;
-	width: 100%;
 	padding: 10px;
 	text-align: center;	
-	max-height: 80px;
-
-    overflow: hidden;
-    text-overflow: ellipsis;
+	overflow: hidden;
     display: -webkit-box;
+    -webkit-line-clamp: 3;
+   /* autoprefixer: off */
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 5;
-    vertical-align: center;
+    /* autoprefixer: on */
     height: 80px;
 }
 
@@ -56,40 +45,36 @@
 	/*background-color: rgba(0,0,0, 0.1); /* Black w/opacity/see-through */
 	//border-radius: 10px;	
 	height: 200px;
-	border-color: grey;
-	border-style: solid;
-	padding: 20px;
-	margin-top: 20px;
+	border: 1px solid #F1E7E8;
+	padding: 10px;
+	margin-top: 10px;
+	color: black;
 	//border-top: 2px solid $top_border_color;
 	background-color: white;
-	a:visited, a:hover
-	{
-		color: black !important;
-	}
-	a {
-		color: black !important;
-		text-decoration: none;
-	}
 }
+.note-box a:hover {
+		color: black !important;
+		text-decoration: none !important;
+};
 
 .note-box:hover  {
 	 box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 	 color: black;
-}
-a:hover {
-	color: black;
+	 text-decoration: none  !important;
+
 }
 
 .note-text {
-	text-indent: 1.5em;
-	display: inline-block;
+	//text-indent: 1.5em;
 	margin-top: 10px;
-	text-align: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    line-height: 1.2em;
+
     display: -webkit-box;
+    -webkit-line-clamp: 3;
+   /* autoprefixer: off */
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    /* autoprefixer: on */
+    overflow: hidden;
 }
 
 .note {
@@ -108,22 +93,16 @@ a:hover {
 	font-weight: bold;
 	display: inline-block;
 	font-size: 24px;
-	line-height: 30px;
-	margin: 0 20px;
 }
 
 .note__cont {
-	padding: 20px;
-	width: 80%;
-	display: block;
-	margin: auto;
 	background-color: white;
 }
 
 .note__date {
 	color: #e5e5e5;
-	right: 20px;
-	bottom: 3px;
+	right: 40px;
+	bottom: 8px;
 	position: absolute;
 }
 
@@ -135,10 +114,14 @@ a:hover {
 	
 }
 
+#notes .nav-link {
+	padding: 0 !important;
+}
+
 @media only screen and (max-width: 1650px) and (min-width: 1024px) 
 {
 	.note__index_topic {
-		width: 840px;
+		//width: 840px;
 	}	
 }
 

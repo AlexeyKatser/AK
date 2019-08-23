@@ -23,3 +23,14 @@ $top_border_color: #87CEEB !global;
 	}	
 }
 
+.navbar__main_block {
+	position: fixed;
+	width: 100%;
+	margin-bottom: 30px;
+	z-index: 20;
+	border-bottom: 2px solid $top_border_color;
+}
+
+.link_to_all {
+	
+}

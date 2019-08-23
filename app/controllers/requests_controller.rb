@@ -1,7 +1,10 @@
 class RequestsController < ApplicationController
 
+  layout 'admin', only: [:edit, :update, :show, :index]
+
   before_action :checkUserAdminWithRedirect, only: [:new, :create, :edit, :update, :index]
   before_action :set_request, only: [:edit, :show, :update, :destroy]
+  before_action :set_service, only: [:create, :edit, :update]
 
   def show
   	@requests = Request.all
@@ -46,6 +49,10 @@ class RequestsController < ApplicationController
 
   def set_request
     @request = Request.find(params[:id])
+  end
+
+  def set_service
+    @service = Service.find(params[:service_id])
   end
 
 end 

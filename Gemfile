@@ -7,8 +7,11 @@ gem 'rails', '~> 5.2.2'
 
 gem 'uglifier', '>= 1.3.0'
 
-gem 'twitter-bootstrap-rails'
+gem 'bootstrap'
 gem 'bootstrap-sass'
+gem 'turbolinks'
+gem 'font-awesome-rails'
+
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'jquery-rails'
@@ -22,6 +25,7 @@ gem 'bootsnap'
 
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
 
 group :production do
 	gem 'pg'
@@ -38,6 +42,8 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.4", require: false
 end
 
 group :test do

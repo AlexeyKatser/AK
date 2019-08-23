@@ -1,18 +1,21 @@
 <div class="container">
-	<div class="note__cont global__box">
-		<h1 class='note__index_topic global__box_title'>
-			<%= @note.topic %>	
-		</h1>
+	<div class="global__box note__cont">
+		<div class="row justify-content-center">	
+			<div class='note__index_topic global__box_title'>
+				<%= @note.topic %>	
+			</div>
+		</div>
 		<div class="">
 			<%= image_tag image_url(@note.img_url), class: 'note__image' %>
 		</div>
 			
-		<div class="note__descr">
+		<div class="note__descr h4">
 			<%= @note.description %>
 		</div>
 		<div class="note__text">
 			<%= @note.text %>
 		</div>
+
 	</div>
 	<% if checkUserAdmin %>
 		<br><%= link_to 'Редактировать статью', edit_note_path(@note) %>

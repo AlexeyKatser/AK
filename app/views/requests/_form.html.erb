@@ -5,8 +5,10 @@
     <% if mode == 2 %> 
       <a class="boxclose"></a>
     <% end  %>
-  	<div class="lead text-center request-header"><%= mode == 1 ? 'Записаться на консультацию' : 'Заказать звонок' %></div>
-    <div class="form-group">   
+    <div class="row justify-content-center">
+  	 <div class="lead text-center request-header"><%= mode == 1 ? 'Записаться на консультацию' : 'Заказать звонок' %></div>
+    </div>
+    <div class="form-group mt-2">   
      	 	<%= f.text_field :name, class: 'form-control', placeholder: true, required: true %>
         <div class="error-box"></div>
     </div>

@@ -93,7 +93,7 @@
   font-family: FontAwesome;
 }
 .service-title {
-  font-weight: bold;
+ // font-weight: bold;
   color: #162546;
   font-size: 20px;
   margin-bottom: 20px;
@@ -120,4 +120,10 @@
 	.loop-action {
 		opacity: 1;
 	}
+}
+
+@media screen and (max-width: 1000px) {
+    #services {
+      max-width: 100% !important;
+  }
 }

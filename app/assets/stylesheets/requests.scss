@@ -39,17 +39,16 @@
 
 .popup {
   display: none;
-  position: fixed;
+  position: fixed !important;
   z-index: 999999;
-  margin: 0 auto !important;
   max-width: 400px;
   border-style: solid;
   border-color: black;
   border-width: 1px;
   border-radius: 20px;
   top: 35%;
-  left: 35%;
   background-color: white;
+  padding-bottom: 10px;
 }
 
 .request-header {
@@ -58,10 +57,10 @@
 
 a.boxclose {
     float:right;
-    margin-top:-36px;
-    margin-right:-31px;
+    margin-top:-18px;
+    margin-right:-12px;
     cursor:pointer;
-    color: #fff;
+    color: white !important;
     border: 1px solid #AEAEAE;
     border-radius: 40px;
     background: black;
@@ -83,11 +82,18 @@ a.boxclose {
 
 
 @media screen and (max-width: 800px) {
-  .popup {
-    width: 100%;
-    left: 10%;
-  }
   .background-image {
     margin: 0 20px !important;
   }
+}
+
+
+.global__box .request-header {
+  background-color: white;
+  text-align: center;
+  line-height: 50px;
+  font-style: 34px !important;
+  box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
+  width: 100%;  
+  margin: 0;
 }

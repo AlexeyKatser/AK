@@ -1,5 +1,7 @@
 class NotesController < ApplicationController
 
+  layout 'admin', only: [:edit, :update]
+
   before_action :set_note, only: [:show, :update, :edit, :destroy] 
   before_action :checkUserAdminWithRedirect, only: [:edit, :update, :destroy]
 
