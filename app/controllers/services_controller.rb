@@ -4,8 +4,6 @@ class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
   before_action :checkUserAdminWithRedirect, only: [:edit, :update, :destroy]
 
-  has_many :requests
-
   # GET /services
   def index
     @services = Service.all

@@ -1,0 +1,5 @@
+
+$('<%= @s_type == "1" ? '' : ".card " %>' + '#new_request').html('<%= j render partial: "requests/form", locals: { new_request: @new_request, mode: @s_type } %>');
+
+
+

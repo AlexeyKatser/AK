@@ -1,4 +1,4 @@
-<div class='container mt-20 carousel__cont'>
+<div class='container my-3 carousel__cont'>
 	<div id="carousel" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
 		    <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -44,7 +44,7 @@
 <div class='container my-3' id='services'>
 	<div class="global__box">
 		<div class='row justify-content-center'>
-			<div class="global__box_title">Услуги</div>
+			<div class="global__box_title">Услуги психолога</div>
 				<% Service.last(3).each do |serv| %>
 				<div class="col-md-4 col-sm-6 col-xs-12 col-12" >
 					<%= render partial: 'services/service', locals: {service: serv } %>
@@ -60,8 +60,8 @@
 <div class="container my-3" id='request' style="margin-top: 20px ">
 	<div class='row justify-content-center'>
 	
-		<div class="global__box", style="max-width: 500px"> 
-			<%= render partial: 'requests/form', locals: {new_request: Request.new, mode: 1 } %>
+		<div class="card", style="max-width: 500px"> 
+			<%= render partial: 'requests/form', locals: {new_request: Request.new, mode: 2 } %>
 		</div>
 	</div>
 </div>

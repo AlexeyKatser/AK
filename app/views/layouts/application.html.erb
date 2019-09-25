@@ -7,7 +7,7 @@
     <title><%= content_for?(:title) ? yield(:title) : "Mpg" %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -23,7 +23,7 @@
 
 <header>
   
-    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light fixed-top navbar__main" id='navbar'>
+    <div class="navbar navbar-expand-lg navbar-expand-md navbar-light fixed-top navbar__main" id='navbar'>
       <div class="container">
         <%= link_to root_path, class: 'navbar-brand navbar-header py-0' do %>
           <!--<img src=<%= asset_path("logo3.png") %> alt='Алина Кацер' class='d-inline-block'>       -->
@@ -41,14 +41,14 @@
           <ul class="navbar-nav mr-auto">
 
             <li class='nav-item'>
-              <%= link_to "Записаться на приём", "#request", class: 'scrollto nav-link navbar__main_btn_separator' %>
+              <%= link_to "Записаться на приём", "#request", class: 'scrollto nav-link' %>
             </li> 
             <div class="dropdown-divider"></div>
             <li class='nav-item'>
-              <%= link_to "Заказать звонок", '#', class: 'recall nav-link navbar__main_btn_separator', rel: 'popup1' %>         
+              <%= link_to "Заказать звонок", '#', class: 'recall nav-link', rel: 'popup1' %>         
             </li class='nav-item'>
             <li>
-              <%= link_to "Link3", "/path3", class: 'nav-link navbar__main_btn_separator' %>
+              <%= link_to "Link3", "/path3", class: 'nav-link' %>
             </li>
           </ul>
           <ul class="navbar-nav navbar-right" style="display: none;">
@@ -70,18 +70,18 @@
         </div>
       </div>
     </div>
-    <div class='content'>
-</header><!-- /header --> 
-
+ </header><!-- /header --> 
+   <div class='content py-2'>
 
   <div class="overlay_popup"></div>
   <div class="justify-content-center d-flex">
     <div class ='popup container col-md-4' id='popup1'>
-      <%= render partial: 'requests/form', locals: { new_request: Request.new, mode: 2 } %>
+      <%= render partial: 'requests/form', locals: { new_request: Request.new, mode: 1 } %>
     </div>
   </div>
 
   <%= yield %>
+</div>
 
 <footer class="footer__main_block navbar-flow-bottom">
   <div class="container my-2">
@@ -109,5 +109,5 @@
 
   
 
-  </body>
+</body>
 </html>

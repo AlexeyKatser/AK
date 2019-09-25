@@ -1,9 +1,9 @@
 $top_border_color: #87CEEB !global;
 
 .global__box {
-	border-top: 2px solid $top_border_color;
-	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
-	background-color: #f6f6f6;
+	//border-top: 2px solid $top_border_color;
+	//box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+	background-color: #fff;
 	padding: 0 15px 15px;
 }
 
@@ -11,9 +11,13 @@ $top_border_color: #87CEEB !global;
 	background-color: white;
 	text-align: center;
 	line-height: 50px;
-	font-style: 34px !important;
-	box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
+	font-size: 24px !important;
+	//box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
 	width: 100%;
+	border-bottom: solid;
+	border-width: 1px;
+	border-color: #87CEEB;
+	margin-bottom: 10px;
 }
 
 

@@ -2,14 +2,16 @@
 	<table class='table table-hover'>
 		<caption>Заявки</caption>
 		<% @requests.reverse_each do |req| %>
-		<tr class='active'>
-			<td class='active'><%= req.id %></td>
-			<td><%= req.name %></td>
-			<td><%= req.phone %></td>
-			<td><%= req.created_at.to_formatted_s(:short)  %></td>
-			<td><%= buttonOrOk%></td>
-			<td><%= req.text %></td>
-		</tr>
+			<tr class='active'>
+				<td class='active'><%= req.id %></td>
+				<td><%= req.name %></td>
+				<td><%= req.phone %></td>
+				<td><%= req.created_at.to_formatted_s(:short)  %></td>
+				<% service = Service.find(req.service_id == nil ? 1 : req.service_id) %>
+				<td> <%= link_to service.name,+
+				 service_path(service) %></td>
+				<td><%= req.text %></td>
+			</tr>
 		<% end %>
 	</table>
 </div>

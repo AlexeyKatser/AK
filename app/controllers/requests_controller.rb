@@ -23,17 +23,17 @@ class RequestsController < ApplicationController
   end
 
   def create
-  	@new_request = Request.new(request_params)
+  	@new_request = @service.requests.build(request_params)
     @new_request.preferedTime = date_from_params(params, :preferedTime)
     respond_to do |format|
       if @new_request.save
-        format.js { render layout: false, content_type: 'text/javascript' }
+        format.js { flash.notice = I18n.t('controllers.requests.created') { render layout: false, content_type: 'text/javascript' } }
         format.html { flash.notice = I18n.t('controllers.requests.created') 
           redirect_to root_url }
         format.json { puts 'json request' }
       else
   		  format.html { render action: 'new' }
-        format.js
+        format.js { render action: 'new' }
   	  end
     end
   end
@@ -44,7 +44,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-  	params.require(:request).permit(:name, :phone, :text, :preferedTime, :setTime, :rtype, :status)	
+  	params.require(:request).permit(:name, :phone, :text, :preferedTime, :setTime, :rtype, :status, :service_id)	
   end
 
   def set_request
@@ -52,7 +52,8 @@ class RequestsController < ApplicationController
   end
 
   def set_service
-    @service = Service.find(params[:service_id])
+        @s_type = params[:request][:service_id]
+    @service = Service.find(params[:request][:service_id])
   end
 
 end 

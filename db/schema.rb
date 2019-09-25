@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_143416) do
+ActiveRecord::Schema.define(version: 2019_09_19_114409) do
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2019_08_01_143416) do
     t.datetime "setTime"
     t.string "status"
     t.integer "rtype"
+    t.integer "service_id"
+    t.index ["service_id"], name: "index_requests_on_service_id"
   end
 
   create_table "services", force: :cascade do |t|

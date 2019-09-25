@@ -25,7 +25,7 @@
 
    <div class="form-group">   
       <%= form.label :icon %>
-      <p><%= image_tag(service.icon.url, size: '100', alt: 'Фото статьи') if service.icon? %></p>
+      <p><%= image_tag(service.icon.url, size: '100', alt: 'Фото услуги') if service.icon? %></p>
       <%= form.file_field :icon, accept: 'image/png,image/gif,image/jpeg' %>
    </div>
 
