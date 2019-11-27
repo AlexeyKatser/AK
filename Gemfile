@@ -8,7 +8,7 @@ gem 'rails', '~> 5.2.2'
 gem 'uglifier', '>= 1.3.0'
 
 gem 'bootstrap'
-gem 'bootstrap-sass'
+#gem 'bootstrap-sass'
 gem 'turbolinks'
 gem 'font-awesome-rails'
 

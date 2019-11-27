@@ -13,23 +13,23 @@
   <div class="card-body px-lg-5 pt-0">
     <%= f.hidden_field :service_id, value: mode %>
 
-    <div class="md-form mt-2">   
+    <div class="form-group mt-3">   
      	<%= f.text_field :name, class: 'form-control', required: true, placeholder: true %>
     </div>
 
-  	<div class="md-form">
+  	<div class="form-group">
    	 	<%= f.telephone_field :phone, class: 'form-control phone', placeholder: true, required: true %>
     </div>
 
-    <div class='md-form', style="display:<%= mode != 1? 'all' : 'none' %>" >Дата и время:
+    <div class='form-group', style="display:<%= mode != 1? 'all' : 'none' %>" >Дата и время:
       <%= f.datetime_select :preferedTime, class: 'form-control', placeholder: true %>
       <div class="error-box"></div>
     </div>
 
-  	<div class="md-form">
+  	<div class="form-group">
    	 	<%= f.text_area :text, size: "60x2", class: 'form-control', id: 'requestText', placeholder: true %>
     </div>
 
-      <%= f.submit mode != 1 ? 'Записаться' : 'Перезовнить мне' , id: mode != 1 ? 'submit-request' : 'submit-request-fast', class: 'btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0' %>
+      <%= f.submit mode != 1 ? 'Записаться' : 'Перезовнить мне' , id: mode != 1 ? 'submit-request' : 'submit-request-fast', class: 'btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0 global__transition' %>
   </div>
 <% end %>

@@ -9,21 +9,20 @@ $top_border_color: #87CEEB !global;
 
 .global__box_title {
 	background-color: white;
-	text-align: center;
+	text-align: left;
 	line-height: 50px;
 	font-size: 24px !important;
 	//box-shadow: inset 0px -2px 2px 0px rgba(0, 0, 0, 0.3);
 	width: 100%;
-	border-bottom: solid;
-	border-width: 1px;
-	border-color: #87CEEB;
+	border-bottom: 1px solid $top_border_color;
 	margin-bottom: 10px;
+	text-indent: 20px;
 }
 
 
-@media screen and (max-width: 800px)  {
+@media screen and (max-width: 768px)  {
 	.global__box {
-		//padding: 10px;
+		padding: 0 0 15px;
 	}	
 }
 
@@ -37,4 +36,12 @@ $top_border_color: #87CEEB !global;
 
 .link_to_all {
 	
+}
+
+.layout__body {
+	background-color: #dddddd;
+}
+
+.global__transition {
+	transition: .3s ease-in-out;
 }

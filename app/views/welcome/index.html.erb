@@ -1,3 +1,4 @@
+<!--
 <div class='container my-3 carousel__cont'>
 	<div id="carousel" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
@@ -24,10 +25,10 @@
 	    </a>
 	    <a href="#carousel" class="right carousel-control" role="button" data-slide="next">
 	    	<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    </a>-->
+	    </a>->
 	</div>
 </div>
-
+-->
 <div class='container my-3' id='notes'>
 	<div class="global__box">
 		<div class='row justify-content-center'>
@@ -36,7 +37,7 @@
 				<%= render partial: "notes/note", collection: Note.last(3) %>	
 		</div>
 		<div class="d-flex justify-content-end mt-3">
-			<%= link_to 'Все статьи', notes_path, class: 'link_to_all btn btn-light' %>
+			<%= link_to 'Все статьи', notes_path, class: 'link_to_all btn btn-outline-info global__transition' %>
 		</div>
 	</div>
 </div>
@@ -46,13 +47,13 @@
 		<div class='row justify-content-center'>
 			<div class="global__box_title">Услуги психолога</div>
 				<% Service.last(3).each do |serv| %>
-				<div class="col-md-4 col-sm-6 col-xs-12 col-12" >
-					<%= render partial: 'services/service', locals: {service: serv } %>
+				<div class="col-md-4 col-sm-6 col-xs-12" >
+					<%= render partial: 'services/service', locals: { service: serv } %>
 				</div>
 			<% end %>
 		</div>
 		<div class="d-flex justify-content-end mt-3">
-			<%= link_to 'Все услуги', services_path, class: 'link_to_all btn btn-light' %>
+			<%= link_to 'Все услуги', services_path, class: 'link_to_all btn btn-outline-info global__transition' %>
 		</div>
 	</div>
 </div>
@@ -61,7 +62,7 @@
 	<div class='row justify-content-center'>
 	
 		<div class="card", style="max-width: 500px"> 
-			<%= render partial: 'requests/form', locals: {new_request: Request.new, mode: 2 } %>
+			<%= render partial: 'requests/form', locals: { new_request: Request.new, mode: 2 } %>
 		</div>
 	</div>
 </div>
