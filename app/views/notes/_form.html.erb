@@ -7,14 +7,15 @@
    	 	<%= f.text_field :description, class: 'form-control', placeholder: true, required: true %>
    	 </div>
 	<div class="form-group">   
-   	 	<%= f.text_area :text, size: '60x2', class: 'form-control', placeholder: true, required: true %>
-   	 </div>
+    <%= f.label :content %>
+   	<%= f.rich_text_area :content %>
+  </div>
 
-   <div class="form-group">   
-      <%= f.label :img_url %>
-      <p><%= image_tag(@note.img_url.url, size: '100', alt: 'Фото статьи') if @note.img_url? %></p>
-      <%= f.file_field :img_url, accept: 'image/png,image/gif,image/jpeg' %>
-   </div>
+  <div class="form-group">   
+    <%= f.label :img_url %>
+    <p><%= image_tag(@note.img_url.url, size: '100', alt: 'Фото статьи') if @note.img_url? %></p>
+    <%= f.file_field :img_url, accept: 'image/png,image/gif,image/jpeg' %>
+  </div>
   <div class="actions">
     <%= f.submit 'Сохранить', class: 'btn btn-primary' %> или <%= link_to 'вернуться', :back %>
   </div>   	 

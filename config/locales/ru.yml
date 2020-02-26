@@ -4,6 +4,7 @@ ru:
       request: 'Заявка'
       user: 'Пользователь'
       note: 'Статья'
+      content: 'Содержание'
     attributes:
       request:
         name: 'Ваше имя'

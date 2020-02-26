@@ -45,7 +45,7 @@
               <%= link_to "Заказать звонок", '#', class: 'recall nav-link', rel: 'popup1' %>         
             </li class='nav-item'>
             <li>
-              <%= link_to "Link3", "/path3", class: 'nav-link' %>
+              <%= link_to "Обо мне", info_path, class: 'nav-link' %>
             </li>
           </ul>
 
@@ -79,6 +79,15 @@
     </div>
 
   <%= yield %>
+  
+  <div class="container my-3" id='request' style="margin-top: 20px ">
+    <div class='row justify-content-center'>
+    
+      <div class="card", style="max-width: 500px"> 
+        <%= render partial: 'requests/form', locals: { new_request: Request.new, mode: 2 } %>
+      </div>
+    </div>
+  </div>
 </div>
 
 <footer class="footer__main_block navbar-flow-bottom">
@@ -102,7 +111,7 @@
       </div>
     </div>
   </div>
-  <p>&copy; Alina  2019</p>
+  <p>&copy; Alina  2019-2020</p>
 </footer>
 
   

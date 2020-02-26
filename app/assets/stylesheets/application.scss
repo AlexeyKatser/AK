@@ -4,8 +4,8 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
 */
 
-//@import 'reset';
-@import 'global';
+//= require 'actiontext'
+@import 'globals';
 @import "bootstrap";
 @import 'carousel';
 @import 'events';
@@ -26,13 +26,21 @@ body {
 .content
 {
 	background-color: #fff;
-	margin: 80px 10vw 20px 10vw;
+	margin: 80px auto 20px auto;
+	max-width: 80%;
 }
 
 @media screen and (max-width: 768px)  {
 	.content {
 		margin: 80px 0 20px 0;
+		max-width: 100%;
 	}	
+}
+
+@media screen and (max-width: 992px)  {
+	.content {
+		max-width: 90%;
+	}
 }
 
 html, body {

@@ -13,4 +13,5 @@
 //= require jquery3
 //= require bootstrap
 //= require rails-ujs
+//= require trix/dist/trix
 //= require_tree .
