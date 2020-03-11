@@ -29,6 +29,7 @@ gem 'fog-aws'
 
 gem 'webpacker'
 gem 'image_processing'
+gem 'activeadmin'
 
 group :production do
 	gem 'pg'
